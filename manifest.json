@@ -1,6 +1,6 @@
 {
   "name": "ESM Exporter",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "manifest_version": 2,
   "description": "This extension was created to export all subscribers from esm",
   "homepage_url": "https://wonkasoft.com/esm-exporter",
@@ -9,28 +9,20 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "default_locale": "en",
   "background": {
     "scripts": [
-      "src/bg/background.js"
-    ],
-    "persistent": true
+        "src/bg/background.js"
+      ]
   },
   "page_action": {
     "default_icon": "icons/icon19.png",
     "default_title": "ESM Exporter",
     "default_popup": "src/page_action/page_action.html"
   },
-  "permissions": [
-    "notifications",
-    "activeTab",
-    "http://*/*",
-    "https://*/*"
-  ],
   "content_scripts": [
     {
       "matches": [
-        "https://www.evolutionsolutionmarketing.com/*"
+        "https://www.evolutionsolutionmarketing.com/*/subscribers*"
       ],
       "js": [
         "src/inject/inject.js"
