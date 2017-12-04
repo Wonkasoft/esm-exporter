@@ -44,6 +44,7 @@
   	chrome.tabs.executeScript({
   		file: "src/inject/export.js"
   	});
+    window.close();
   }
 
   /**
