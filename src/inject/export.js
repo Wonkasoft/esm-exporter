@@ -36,7 +36,9 @@ function downloadAllSubs() {
 	var subscriberTable = document.getElementById("subscribers");
 	var subscribers = subscriberTable.children[1].children;
 	var header = "ID,First Name,Last Name,Mobile #,Subscriptions,Last Activity,Username";
-	var rows = [...subscribers].map((row) => {
+	var rows = [...subscribers].filter((row) => {
+		return row.children[3].outerHTML.match(/\d{3}-\d{3}-\d{4}/);
+	}).map((row) => {
 		return row.children[0].innerHTML + "," +
 		row.children[1].innerHTML + "," +
 		row.children[2].innerHTML + "," +
